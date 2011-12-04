@@ -1,0 +1,114 @@
+externals {
+   external: "elm";
+}
+
+collections {
+   group { name: "main";
+      data {
+         item: "pref_size" "500x500";
+      }
+      parts {
+         part { name: "background";
+            type: RECT;
+            mouse_events: 0;
+            description { state: "default" 0;
+            }
+         }
+         part { name: "mnuToolbar";
+         	type: EXTERNAL;
+         	source: "elm/toolbar";
+         	description { state: "default" 0;
+         		rel1 {
+               	  relative: 0 0;
+                  offset: 0 0;
+               }
+               rel2 {
+                  relative: 1 0.1;
+                  offset: 0 0;
+               }
+         	}
+         }
+         
+         part { name: "lstFeeds";
+         	type: EXTERNAL;
+         	source: "elm/list";
+         	description { state: "default" 0;
+         		rel1 {
+               	  relative: 0 0.1;
+                  offset: 0 0;
+               }
+               rel2 {
+                  relative: 0.3 1;
+                  offset: 0 0;
+               }
+               params {
+                  string: "style" "default";
+                  choice: "list mode" "scroll";
+                  choice: "horizontal scroll" "auto";
+                  choice: "vertical scroll" "auto";
+                  bool: "horizontal mode" "0";
+                  bool: "multi-select mode" "0";
+                  bool: "always-select mode" "0";
+               }
+         	}
+         }
+         
+         part { name: "lstHeader";
+            type: EXTERNAL;
+            source: "elm/list";
+            description { state: "default" 0;
+               rel1 {
+               	  relative: 0.3 0.1;
+                  offset: 0 0;
+               }
+               rel2 {
+                  relative: 1 0.5;
+                  offset: 0 0;
+               }
+               params {
+                  string: "style" "default";
+                  choice: "list mode" "scroll";
+                  choice: "horizontal scroll" "auto";
+                  choice: "vertical scroll" "auto";
+                  bool: "horizontal mode" "0";
+                  bool: "multi-select mode" "0";
+                  bool: "always-select mode" "0";
+               }
+            }
+         }
+         part { name: "txtFeedTitle";
+            type: EXTERNAL;
+            source: "elm/label";
+            description { state: "default" 0;
+               rel1 {
+                  relative: 0.3 0.5;
+                  offset: 0 0;
+               }
+               rel2 {
+                  relative: 1 0.5;
+                  offset: 0 30;
+               }
+            }
+         }
+         part { name: "txtFeedContent";
+            type: EXTERNAL;
+            source: "elm/anchorview";
+            description { state: "default" 0;
+               rel1 {
+                  offset: 0 20;
+                  to: "txtFeedTitle";
+               }
+               rel2 {
+                  offset: 0 0;
+                  to_x: "txtFeedTitle";
+               }
+               params {
+                  string: "style" "default";
+                  string: "text" "";
+               }
+            }
+         }
+      }
+   }
+}
+
