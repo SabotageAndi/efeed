@@ -11,9 +11,9 @@ public static int main ( string[] argc )
 	EcoreEvas.init();
 	Edje.init();
 	Elm.init(argc);
+	
 
-
-	var ee = new Win(null, "Edje Example", WinType.DESKTOP);
+	var ee = new Win(null, "Edje Example", WinType.BASIC);
 	ee.title_set( "Edje example");
 	ee.smart_callback_add("delete-request", win_del);
 

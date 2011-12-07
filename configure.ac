@@ -15,6 +15,7 @@ AM_PROG_VALAC
 
 pkg_modules="glib-2.0 >= 2.24.1
              gobject-2.0 >= 2.24.1
+	     gee-1.0 >= 0.6.3
 	     edje >= 0.26
 	     ecore-evas >= 0.26
 	     evas >= 0.26

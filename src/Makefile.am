@@ -11,7 +11,7 @@ AM_VALAFLAGS = --pkg "ecore-evas" \
 	       --pkg "glib-2.0" \
 	       --pkg "gio-2.0" 
 
-efeed_SOURCES = efeed.vala
+efeed_SOURCES = efeed.vala entities.vala
 efeed_LDADD = $(EFEED_LIBS)
 efeed_LDFLAGS = $(AM_LIBS)
 
